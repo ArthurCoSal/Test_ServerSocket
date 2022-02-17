@@ -1,0 +1,88 @@
+public class Cases {
+	private int cases = 1;
+	/*normal = 1;
+	 pointCapture = 3;
+	 vide = 4;
+	 horsMap = 5;
+	 tapisRoulant1 = 6;
+	 tapisRoulant2 = 7; 
+	 */
+	
+	public Cases(int cases) {
+		setCases(cases);
+		}
+	
+	
+	public void setCases(int cases) {
+		if(cases < 8) {
+			this.cases = cases;
+		}else {
+			System.err.println("Ce type de case est inexistant");
+		}
+		
+	}
+	
+	public int getCases() {
+		return cases;
+	}
+	
+	public String toString() {
+		 String temp = String.valueOf(getCases());
+		 return temp;
+	}
+	
+	
+
+		
+	
+
+
+
+}
+
+
+public class Mur extends Cases {
+	private String orientation = "Nord";
+	
+	public Mur(int cases, String orientation) {
+		super(cases);
+		setOrientation(orientation);
+		
+	}
+	
+	public void setOrientation(String orientation) {
+		this.orientation = orientation;
+	}
+	
+	
+	public String getOrientation() {
+		return orientation;
+	}
+	
+
+}
+
+
+public class Spawn extends Cases {
+	private String spawn = "spawn point";
+	
+	public Spawn(int cases, String spawn) {
+		super(cases);
+	}
+	
+	public Spawn(int cases) {
+		super(cases);
+	}
+	
+	public void setSpawn(String spawn) {
+		this.spawn = spawn;
+	}
+	
+	public String getSpawn() {
+		return spawn;
+	}
+	
+	public String toString() {
+		return super.toString() + spawn;
+	}
+}
